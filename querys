@@ -1,0 +1,8 @@
+--Depositar acá las consultas que se comenzaron en BD SR el 24/05/2023
+
+update sr.cortes
+set estatus = 'CE'
+where no_corte = (select no_corte from sr.cortes where no_periodo_ano = 2023 
+order by no_corte desc limit 1) 
+and no_periodo_ano = 2023;
+
